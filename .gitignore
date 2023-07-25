@@ -19,3 +19,5 @@
 *.CopyComplete
 *.exe
 *.user
+*.config
+*.suo
