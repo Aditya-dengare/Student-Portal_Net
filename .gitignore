@@ -21,3 +21,5 @@
 *.user
 *.config
 *.suo
+*.bin
+*.v2

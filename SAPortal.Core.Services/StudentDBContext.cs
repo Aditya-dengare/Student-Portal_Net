@@ -10,6 +10,8 @@ namespace SAPortal.Core.Services
             
         }
 
-        public DbSet<Student> Students { get; set; }  
+        public DbSet<Student> Students { get; set; }
+        public DbSet<CourseName> CourseNames { get; set; }
+        public DbSet<Category> Categories { get; set; } 
     }
 }

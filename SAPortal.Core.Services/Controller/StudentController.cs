@@ -92,6 +92,40 @@ namespace SAPortal.Core.Services
             return NoContent();
         }
 
+        // Add Course Name API Call
+        [HttpPost("AddCourse")]
+        public async Task<ActionResult<CourseName>> AddCourseName(CourseName courseName)
+        { 
+            _dbContext.CourseNames.Add(courseName);
+            await _dbContext.SaveChangesAsync();
+
+            return Ok("Course Name Added Successfully");
+        }
+
+        // Get Course Name
+        [HttpGet("GetCourse")]
+        public async Task<ActionResult<IEnumerable<CourseName>>> GetCourseName()
+        {
+            return await _dbContext.CourseNames.ToListAsync();
+        }
+
+        // Add Category
+        [HttpPost("AddCategory")]
+        public async Task<ActionResult<Category>> AddCategory(Category category)
+        {
+            _dbContext.Categories.Add(category);
+            await _dbContext.SaveChangesAsync();
+
+            return Ok("Category Added Successfully");
+        }
+
+        // Get Category
+        [HttpGet("GetCategory")]
+        public async Task<ActionResult<IEnumerable<Category>>> GetCategory()
+        { 
+            return await _dbContext.Categories.ToListAsync();
+        }
+
         private bool StudentExists(int id)
         {
             return _dbContext.Students.Any(e => e.Id == id);
